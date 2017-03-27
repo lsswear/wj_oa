@@ -45,6 +45,10 @@ return [
             'driver' => 'token',
             'provider' => 'users',
         ],
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ],
     ],
 
     /*
@@ -57,7 +61,7 @@ return [
     | mechanisms used by this application to persist your user's data.
     |
     | If you have multiple user tables or models you may configure multiple
-    | sources which represent each model / table. These sources may then
+    | sources which represent each Model / table. These sources may then
     | be assigned to any extra authentication guards you have defined.
     |
     | Supported: "database", "eloquent"
@@ -67,7 +71,11 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\User::class,
+            'Model' => App\User::class,
+        ],
+        'admins' => [
+            'driver' => 'eloquent',
+            'Model' => App\Model\AdminModel::class,
         ],
 
         // 'users' => [
@@ -86,7 +94,7 @@ return [
     | table that maintains all of the reset tokens for your application.
     |
     | You may specify multiple password reset configurations if you have more
-    | than one user table or model in the application and you want to have
+    | than one user table or Model in the application and you want to have
     | separate password reset settings based on the specific user types.
     |
     | The expire time is the number of minutes that the reset token should be

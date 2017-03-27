@@ -1,0 +1,43 @@
+.ui.menu{ 
+	border-radius: 0rem;
+ }
+.ui.menu .item,a{ 
+	cursor:pointer;
+}
+.ui.sidebar{ 
+	overflow-y: hidden!important;	
+}
+.ui.vertical.menu {
+     width: 100%;
+}
+#menu_button{ 
+	visibility:hidden; 
+}
+#main{
+	padding:0px!important;
+	margin: 0rem; 
+	margin-top: -1rem;
+} 
+ #menu_left{
+    padding:0px!important;
+}
+#content{ 
+	padding:0px;
+}
+#content .content_div{ 
+	padding: 1rem;	
+}
+.main #content{ 
+	overflow-y:auto;
+}
+@media screen and (max-width: 992px) {
+    #menu_left {
+        display: none;
+    }
+    #menu_button{ 
+		visibility: visible;
+    }
+    #content{ 
+		width:100%!important;	
+    }
+}

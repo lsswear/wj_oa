@@ -16,5 +16,18 @@ Route::get('/', function () {
 });
 
 Route::auth();
+Route::group(['middleware' => 'web'], function () {
+    Route::get('/home', 'HomeController@index');
+});
 
-Route::get('/home', 'HomeController@index');
+Route::post('admin/login','Admin\AdminController@login');
+Route::group(['as'=>'admin::','namespace'=>'Admin','prefix'=>'admin'],function(){
+    Route::get('/login', 'AdminController@showLogin');
+    Route::get('/','IndexController@index');
+    Route::get('/logout', 'AdminController@logout');
+});
+
+
+Route::group(['middleware' => 'admin','namespace'=>'Admin','prefix'=>'admin_login'], function () {
+    Route::get('/userInfo', 'IndexController@userInfo');
+});

@@ -36,7 +36,7 @@ return [
     | Entrust Permission Model
     |--------------------------------------------------------------------------
     |
-    | This is the Permission model used by Entrust to create correct relations.
+    | This is the Permission Model used by Entrust to create correct relations.
     | Update the permission if it is in a different namespace.
     |
     */
